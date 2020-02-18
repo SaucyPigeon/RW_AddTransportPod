@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+  <name>Add Transport Pod</name>
+  <author>Saucy_Pigeon</author>
+  <url></url>
+  <description>Can now quickly build transport pods from the pod launcher, without having to go to a separate menu. Save game compatible - add or remove with no problems.</description>
+  <supportedVersions>
+    <li>1.0</li>
+  </supportedVersions>
+</ModMetaData>
