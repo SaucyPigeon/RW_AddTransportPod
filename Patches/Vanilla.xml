@@ -3,27 +3,24 @@
 
 	<!--============================== Transport pods ==============================-->
 	
-	<Operation Class="PatchOperationSequence">
-		<!-- Prevent overwriting if already added -->
-		<!-- Advanced Transport Pods by Crewd adds its own CompProperties_AffectedByFacilities -->
-		<!--<success>Always</success>-->
-		
-		<operations>
-			<li Class="PatchOperationTest">
-				<xpath>Defs/ThingDef/[defName="PodLauncher"]/comps//*[@Class="CompProperties_AffectedByFacilities"]</xpath>
-				<success>Invert</success>
-			</li>
-			<li Class="PatchOperationAdd">
-				<xpath>Defs/ThingDef[defName="PodLauncher"]/comps</xpath>
-				<value>
-					<li Class="CompProperties_AffectedByFacilities">
-						<linkableFacilities>
-							<li>TransportPod</li>
-						</linkableFacilities>
-					</li>
-				</value>
-			</li>
-		</operations>
-	</Operation>
 	
+	<!--
+	
+	Advanced Transport Pods by Crewd adds its own CompProperties_AffectedByFac-
+	ilities via PatchOperationAdd. Load this mod after ATP to allow ATP to
+	apply its patch.
+	
+	-->
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="PodLauncher"]/comps</xpath>
+		<value>
+			<li Class="CompProperties_AffectedByFacilities">
+				<linkableFacilities>
+					<li>TransportPod</li>
+				</linkableFacilities>
+			</li>
+		</value>
+	</Operation>
+		
 </Patch>

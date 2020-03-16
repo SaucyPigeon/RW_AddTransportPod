@@ -9,4 +9,8 @@
 	<li>1.1</li>
   </supportedVersions>
   <packageId>SaucyPigeon.AddTransportPod</packageId>
+  <loadAfter>
+    <!-- PatchOperationAdd conflict -->
+    <li>crewd.AdvancedTransportPods</li>
+  </loadAfter>
 </ModMetaData>
