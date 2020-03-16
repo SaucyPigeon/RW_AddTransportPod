@@ -3,15 +3,27 @@
 
 	<!--============================== Transport pods ==============================-->
 	
-	<Operation Class="PatchOperationAdd">
-		<xpath>Defs/ThingDef[defName="PodLauncher"]/comps</xpath>
-		<value>
-			<li Class="CompProperties_AffectedByFacilities">
-				<linkableFacilities>
-					<li>TransportPod</li>
-				</linkableFacilities>
-			</li>
-		</value>
-	</Operation>
+	<Operation Class="PatchOperationSequence">
+		<!-- Prevent overwriting if already added -->
+		<!-- Advanced Transport Pods by Crewd adds its own CompProperties_AffectedByFacilities -->
+		<!--<success>Always</success>-->
 		
+		<operations>
+			<li Class="PatchOperationTest">
+				<xpath>Defs/ThingDef/[defName="PodLauncher"]/comps//*[@Class="CompProperties_AffectedByFacilities"]</xpath>
+				<success>Invert</success>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[defName="PodLauncher"]/comps</xpath>
+				<value>
+					<li Class="CompProperties_AffectedByFacilities">
+						<linkableFacilities>
+							<li>TransportPod</li>
+						</linkableFacilities>
+					</li>
+				</value>
+			</li>
+		</operations>
+	</Operation>
+	
 </Patch>
