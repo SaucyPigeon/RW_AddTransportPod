@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+	<!--============================== Transport pods ==============================-->
+	
+	
+	<!--
+	
+	Advanced Transport Pods by Crewd adds its own CompProperties_AffectedByFac-
+	ilities via PatchOperationAdd. Load this mod after ATP to allow ATP to
+	apply its patch.
+	
+	-->
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="PodLauncher"]/comps</xpath>
+		<value>
+			<li Class="CompProperties_AffectedByFacilities">
+				<linkableFacilities>
+					<li>TransportPod</li>
+				</linkableFacilities>
+			</li>
+		</value>
+	</Operation>
+		
+</Patch>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+	<!--============================== Better Pod Launcher by kang060302 ==============================-->
+	
+	<!-- Add automatic refuel toggle to better pod launchers (only applies to version 1.1).	-->
+	
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Better Pod Launcher</li>
+		</mods>
+		<match Class="PatchOperationAdd">
+			<xpath>Defs/ThingDef[defName="PodLaunchertwo" or defName="PodLauncherthree" or defName="PodLauncherfour" or defName="PodLauncherfive" or defName="BPL_EX"]/comps/li[@Class="CompProperties_Refuelable"]</xpath>
+			<value>
+				<showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
+			</value>
+		</match>
+	</Operation>
+	
+</Patch>
