@@ -3,29 +3,62 @@
 
 	<!--============================== Better Pod Launcher by kang060302 ==============================-->
 	
+	<!--
+	
+	If Advanced Transport Pods is loaded, add their mods to the Better Pod Lau-
+	nchers.	Otherwise, just add the vanilla Transport Pod. This is done like
+	this for simplicity while keeping the correct order for ATP.
+	
+	Better Pod Launchers:
+	- PodLaunchertwo
+	- PodLauncherthree
+	- PodLauncherfour
+	- PodLauncherfive
+	- BPL_EX
+	
+	Advanced Transport Pods:
+	<li>SmallTransportPodI</li>
+	<li>TransportPod</li>
+	<li>AdvancedTransportPodI</li>
+	<li>AdvancedTransportPodII</li>
+	<li>AdvancedTransportPodIII</li>
+	
+	-->
+	
 	<Operation Class="PatchOperationFindMod">
 		<mods>
 			<li>Better Pod Launcher</li>
 		</mods>
-		<match Class="PatchOperationSequence">
-			<!--<success>Always</success>-->
-			<operations>
-				<!-- Better pod launcher -->
-				<!-- Super pod launcher -->
-				<!-- Ultra pod launcher -->
-				<!-- Metal pod launcher -->
-				<!-- Pod launcher EX -->
-				<li Class="PatchOperationAdd">
-					<xpath>Defs/ThingDef[defName="PodLaunchertwo" or defName="PodLauncherthree" or defName="PodLauncherfour" or defName="PodLauncherfive" or defName="BPL_EX"]/comps</xpath>
-					<value>
-						<li Class="CompProperties_AffectedByFacilities">
-							<linkableFacilities>
-								<li>TransportPod</li>
-							</linkableFacilities>
-						</li>
-					</value>
-				</li>
-			</operations>
+		<match Class="PatchOperationFindMod">
+			<mods>
+				<li>Advanced Transport Pods</li>
+			</mods>
+			<!-- Add ATP pods to Better Pod Launchers -->
+			<match Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[defName="PodLaunchertwo" or defName="PodLauncherthree" or defName="PodLauncherfour" or defName="PodLauncherfive" or defName="BPL_EX"]/comps</xpath>
+				<value>
+					<li Class="CompProperties_AffectedByFacilities">
+						<linkableFacilities>
+							<li>SmallTransportPodI</li>
+							<li>TransportPod</li>
+							<li>AdvancedTransportPodI</li>
+							<li>AdvancedTransportPodII</li>
+							<li>AdvancedTransportPodIII</li>
+						</linkableFacilities>
+					</li>
+				</value>
+			</match>
+			<!-- Just add the vanilla pod to Better Pod Launchers -->
+			<nomatch Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[defName="PodLaunchertwo" or defName="PodLauncherthree" or defName="PodLauncherfour" or defName="PodLauncherfive" or defName="BPL_EX"]/comps</xpath>
+				<value>
+					<li Class="CompProperties_AffectedByFacilities">
+						<linkableFacilities>
+							<li>TransportPod</li>
+						</linkableFacilities>
+					</li>
+				</value>
+			</nomatch>
 		</match>
 	</Operation>
 	
