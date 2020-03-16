@@ -2,13 +2,13 @@
 <ModMetaData>
   <name>Add Transport Pod</name>
   <author>Saucy_Pigeon</author>
-  <url></url>
+  <packageId>SaucyPigeon.AddTransportPod</packageId>
+  <url>https://steamcommunity.com/sharedfiles/filedetails/?id=1892168630</url>
   <description>Can now quickly build transport pods from the pod launcher, without having to go to a separate menu. Save game compatible - add or remove with no problems.</description>
   <supportedVersions>
     <li>1.0</li>
 	<li>1.1</li>
   </supportedVersions>
-  <packageId>SaucyPigeon.AddTransportPod</packageId>
   <loadAfter>
     <!-- PatchOperationAdd conflict -->
     <li>crewd.AdvancedTransportPods</li>
