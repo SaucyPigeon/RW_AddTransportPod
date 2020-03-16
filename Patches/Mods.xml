@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+	<!--============================== Better Pod Launcher by kang060302 ==============================-->
+	
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Better Pod Launcher</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<!--<success>Always</success>-->
+			<operations>
+				<!-- Better pod launcher -->
+				<!-- Super pod launcher -->
+				<!-- Ultra pod launcher -->
+				<!-- Metal pod launcher -->
+				<!-- Pod launcher EX -->
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/ThingDef[defName="PodLaunchertwo" or defName="PodLauncherthree" or defName="PodLauncherfour" or defName="PodLauncherfive" or defName="BPL_EX"]/comps</xpath>
+					<value>
+						<li Class="CompProperties_AffectedByFacilities">
+							<linkableFacilities>
+								<li>TransportPod</li>
+							</linkableFacilities>
+						</li>
+					</value>
+				</li>
+			</operations>
+		</match>
+	</Operation>
+	
+</Patch>
