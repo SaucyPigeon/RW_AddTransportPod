@@ -4,7 +4,10 @@
   <author>Saucy_Pigeon</author>
   <packageId>SaucyPigeon.AddTransportPod</packageId>
   <url>https://steamcommunity.com/sharedfiles/filedetails/?id=1892168630</url>
-  <description>Can now quickly build transport pods from the pod launcher, without having to go to a separate menu. Save game compatible - add or remove with no problems.
+  <description>Can now quickly build transport pods from the pod launcher, without having to go to a separate menu.
+  
+For version 1.0: save game compatible - add or remove with no problems.
+For versions 1.1 and above: will only work with saves without any pod launchers already built.
 
 Load this mod after Advanced Transport Pods if you are using that mod.
   </description>
