@@ -11,6 +11,7 @@ Load this mod after Advanced Transport Pods if you are using that mod.
   <supportedVersions>
     <li>1.0</li>
 	<li>1.1</li>
+	<li>1.2</li>
   </supportedVersions>
   <loadAfter>
     <!-- PatchOperationAdd conflict -->
